@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<div class="container">
+    <div class="jumbotron">
+        <h2>this is a Fast Food section</h2>
+    </div>
+    <h1>the most popular Fast Food in town</h1>
+    <div class="container">
+        <div class="row d-flex flex-wrap">
+                <% fastFoods.forEach(fast => { %>
+                <a class="col-sm-12 col-md-6 col-lg-3 text-center mb-5" href="/fast-food/<%= fast._id%>">
+
+                    <div class="card col-12" style="height: 100%;">
+                        <img class="card-img-top mt-2" src="<%= fast.logo %> " alt="">
+                        <div class="card-body ">
+                            <h3 class="card-text"><%= fast.name %> </h3>
+                        </div>
+                    </div>
+                </a>
+                <% }) %>
+        </div>
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>
