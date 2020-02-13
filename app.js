@@ -56,11 +56,11 @@ app.post('/fast-food', function(req, res){
 
 app.get('/fast-food/:id', function(req, res){
     let id = req.params.id;
-    fastFood.findById(id, function (err, foundFastFood) {
+    fastFood.findById(id, function (err, fastFood) {
         if(err) {
             console.log(err);
         } else {
-            res.render('show', {fastfood: foundFastFood})
+            res.render('show', {fastFood: fastFood})
         }
     });
 });
